@@ -32,7 +32,7 @@ try {
 
     session.beginTransaction();
   Detail detail=session.get(Detail.class,1);
-  detail.getEmployee().setEmpDetail(null);
+//  detail.getEmployee().setEmpDetail(null);
     session.delete(detail);
 
     session.getTransaction().commit();
