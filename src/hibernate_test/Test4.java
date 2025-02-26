@@ -19,7 +19,10 @@ try {
     Session session=factory.getCurrentSession();
     session.beginTransaction();
 
-    session.createQuery("update Employee set salary=1000 where name = 'Aleksandr'").executeUpdate();
+//    Employee emp=session.get(Employee.class,1);
+//    emp.setSalary(1500);
+
+    session.createQuery("update Employee set salary=999 where id = '5'").executeUpdate();
 
     session.getTransaction().commit();
 

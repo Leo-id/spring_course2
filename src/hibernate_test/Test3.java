@@ -18,9 +18,10 @@ public class Test3 {
 try {
     Session session=factory.getCurrentSession();
     session.beginTransaction();
-//    List<Employee> emps=session.createQuery("from Employee").getResultList();
+//    List<Employee> emps=session.createQuery("from Employee").getResultList();  // указывыаем имя класса
 
-    List<Employee> emps=session.createQuery("from Employee" + " where name='Aleksandr' and salary>650").getResultList();
+    List<Employee> emps=session.createQuery("from Employee" +
+            " where name='Oleg' and salary>650").getResultList();  // name - название поля класса, а не столбца БД
 
     for (Employee e: emps){
         System.out.println(e);

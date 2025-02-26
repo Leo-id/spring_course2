@@ -4,7 +4,7 @@ package hibernate_test.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="employees")
+@Table(name="employees")  // имя как в таблице БД
 public class Employee {
 
 
