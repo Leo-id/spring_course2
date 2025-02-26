@@ -15,12 +15,14 @@ public class Test2 {
                 .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
 
-        Session session=factory.getCurrentSession();
+        Session session=null;
 try {
 
+    session=factory.getCurrentSession();
 
-//Employee employee=new Employee("Nikolay", "Ivanov","HR",850);
-//Detail detail=new Detail("Ney-York","464646","nikolay@gmail.ru");
+
+//Employee employee=new Employee("Sergey", "Ivanov","HR",850);
+//Detail detail=new Detail("York","464646","nikolay@gmail.ru");
 //
 //employee.setEmpDetail(detail);
 //detail.setEmployee(employee);
@@ -31,8 +33,10 @@ try {
 
 
     session.beginTransaction();
-  Detail detail=session.get(Detail.class,1);
-  detail.getEmployee().setEmpDetail(null);
+  Detail detail=session.get(Detail.class,4);
+
+//    System.out.print(detail.getEmployee());
+  detail.getEmployee().setEmpDetail(null);   // разрыв связи детали - работник
     session.delete(detail);
 
     session.getTransaction().commit();
