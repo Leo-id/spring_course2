@@ -46,7 +46,7 @@ try {
 
 
     session.beginTransaction();
-    Department department=session.get(Department.class, 1);
+    Department department=session.get(Department.class, 2);
     session.delete(department);
     session.getTransaction().commit();
     System.out.println("Done");
